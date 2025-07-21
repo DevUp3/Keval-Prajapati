@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Jar - Express Your Thanks</title>
+    <meta name="description" content="A digital gratitude jar to collect and display your daily moments of thankfulness">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <div class="animated-icon">
+                    <div class="gratitude-orb">
+                        <div class="orb-inner"></div>
+                        <div class="sparkle sparkle-1"></div>
+                        <div class="sparkle sparkle-2"></div>
+                        <div class="sparkle sparkle-3"></div>
+                    </div>
+                </div>
+                Gratitude Jar
+            </h1>
+            <p class="subtitle">Collect moments of thankfulness</p>
+        </header>
+
+        <!-- Today's Gratitude Section -->
+        <section class="todays-gratitude" id="todaysGratitude" aria-live="polite">
+            <h2 class="todays-title">Today's Gratitude</h2>
+            <div class="todays-note" id="todaysNote">
+                <p class="todays-text" id="todaysText">Add your first gratitude note to see a daily inspiration!</p>
+            </div>
+        </section>
+
+        <!-- Add Gratitude Form -->
+        <section class="form-section">
+            <form class="gratitude-form" id="gratitudeForm" aria-label="Add gratitude note">
+                <div class="form-group">
+                    <label for="gratitudeText" class="form-label">What are you grateful for today?</label>
+                    <textarea 
+                        id="gratitudeText" 
+                        class="form-textarea" 
+                        placeholder="I'm grateful for..."
+                        rows="3"
+                        maxlength="200"
+                        required
+                        aria-describedby="charCount"
+                    ></textarea>
+                    <div class="char-count" id="charCount">0 / 200</div>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Add to Jar</span>
+                    <span class="btn-icon">✨</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Gratitude Notes Grid -->
+        <section class="notes-section">
+            <div class="notes-header">
+                <h2 class="notes-title">Your Gratitude Collection</h2>
+                <div class="notes-count" id="notesCount">0 notes</div>
+            </div>
+            <div class="notes-grid" id="notesGrid" role="region" aria-label="Gratitude notes collection">
+                <!-- Notes will be dynamically added here -->
+            </div>
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">📝</div>
+                <h3 class="empty-title">Your jar is empty</h3>
+                <p class="empty-message">Start by adding your first gratitude note above!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
